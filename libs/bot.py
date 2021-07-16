@@ -1,5 +1,5 @@
 import telebot
-from data import DataController
+from .data import DataController
 from threading import Thread
 from time import sleep
 
@@ -17,14 +17,16 @@ class Bot:
 			# 'code' = 'channel_username' + '-' + 'challenge_message_id' 
 			pass
 		
-		@self.bot.message_handler(commands = ["edit"]):
+		@self.bot.message_handler(commands = ["edit"])
+		def edit(message):
 			# using `self.dc.texts['command_edit']`
 			# '/edit code' edits a sent answer
 			# 'code' = 'channel_username' + '-' + 'challenge_message_id'
 			# it will show a keyboard markup to show answers
 			pass
 		
-		@self.bot.message_handler(commands = ["delete"]):
+		@self.bot.message_handler(commands = ["delete"])
+		def delete(message):
 			# using `self.dc.texts['command_delete']`
 			# '/delete code' edits a sent answer
 			# 'code' = 'channel_username' + '-' + 'challenge_message_id'
